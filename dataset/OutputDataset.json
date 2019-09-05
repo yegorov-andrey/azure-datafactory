@@ -1,0 +1,16 @@
+{
+	"name": "OutputDataset",
+	"properties": {
+		"description": "Save data to Data Lake Storage Gen2 in ORC format",
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeGen2LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"fileName": "",
+			"folderPath": "data-lake"
+		}
+	}
+}
