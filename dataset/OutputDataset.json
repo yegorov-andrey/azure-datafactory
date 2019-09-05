@@ -1,7 +1,7 @@
 {
 	"name": "OutputDataset",
 	"properties": {
-		"description": "Save data to Data Lake Storage Gen2 in ORC format",
+		"description": "Save data to Data Lake Storage Gen2 (bucket: data-lake)",
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeGen2LinkedService",
 			"type": "LinkedServiceReference"

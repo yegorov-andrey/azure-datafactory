@@ -1,6 +1,7 @@
 {
 	"name": "InputDataset",
 	"properties": {
+		"description": "Load data from Blob Storage (bucket: iot-hub)",
 		"linkedServiceName": {
 			"referenceName": "AzureStorageLinkedService",
 			"type": "LinkedServiceReference"
