@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "andreysyegorov-datafactory"
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeGen2LinkedService_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeGen2LinkedService_properties_typeProperties_url": {
+			"value": "https://andreysyegorov4storage.dfs.core.windows.net"
+		},
+		"OutputDataset_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"OutputDataset_properties_typeProperties_folderPath": {
+			"value": "data-lake"
+		}
+	}
+}

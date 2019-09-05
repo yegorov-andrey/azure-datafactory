@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "andreysyegorov-datafactory"
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
+		},
+		"AzureDataLakeGen2LinkedService_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeGen2LinkedService'"
+		},
+		"AzureDataLakeGen2LinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://andreysyegorov4storage.dfs.core.windows.net"
+		},
+		"OutputDataset_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"OutputDataset_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "data-lake"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas Token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureStorageLinkedService_connectionString": {
+						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
+					},
+					"AzureDataLakeGen2LinkedService_accountKey": {
+						"value": "[parameters('AzureDataLakeGen2LinkedService_accountKey')]"
+					},
+					"AzureDataLakeGen2LinkedService_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeGen2LinkedService_properties_typeProperties_url')]"
+					},
+					"OutputDataset_properties_typeProperties_fileName": {
+						"value": "[parameters('OutputDataset_properties_typeProperties_fileName')]"
+					},
+					"OutputDataset_properties_typeProperties_folderPath": {
+						"value": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
