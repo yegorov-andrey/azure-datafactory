@@ -1,0 +1,44 @@
+{
+	"name": "InputDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Top_1_000_Songs_To_Hear_Before_You_Die",
+				"container": "data-lake"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "THEME",
+				"type": "String"
+			},
+			{
+				"name": "TITLE",
+				"type": "String"
+			},
+			{
+				"name": "ARTIST",
+				"type": "String"
+			},
+			{
+				"name": "YEAR",
+				"type": "String"
+			},
+			{
+				"name": "SPOTIFY_URL",
+				"type": "String"
+			}
+		]
+	}
+}
