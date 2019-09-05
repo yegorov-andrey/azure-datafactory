@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": "Top_1_000_Songs_To_Hear_Before_You_Die",
-				"container": "data-lake"
+				"container": "iot-hub"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
