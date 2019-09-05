@@ -3,7 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Data1",
+				"name": "CopyFromBlobToLake",
+				"description": "Copy from Blob Storage (bucket: iot-hub) to Data Lake Storage Gen2 (bucket: data-lake)",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
