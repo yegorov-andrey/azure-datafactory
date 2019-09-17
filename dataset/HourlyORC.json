@@ -13,11 +13,11 @@
 				"filePattern": "setOfObjects"
 			},
 			"fileName": {
-				"value": "{@formatDateTime(utcnow(), 'HH')}.json",
+				"value": "@{concat(formatDateTime(utcnow(), 'HH'), '.json')}",
 				"type": "Expression"
 			},
 			"folderPath": {
-				"value": "data-lake/{@formatDateTime(utcnow(), 'yyyy/MM/dd')}",
+				"value": "data-lake/@formatDateTime(utcnow(), 'yyyy/MM/dd')",
 				"type": "Expression"
 			}
 		}
