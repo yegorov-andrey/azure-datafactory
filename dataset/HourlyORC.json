@@ -1,0 +1,24 @@
+{
+	"name": "HourlyORC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"format": {
+				"type": "OrcFormat"
+			},
+			"fileName": {
+				"value": "@formatDateTime(utcnow(), 'HH')",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "@formatDateTime(utcnow(), 'yyyy/MM/dd')",
+				"type": "Expression"
+			}
+		}
+	}
+}
