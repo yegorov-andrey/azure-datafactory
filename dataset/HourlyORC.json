@@ -9,11 +9,10 @@
 		"type": "AzureBlob",
 		"typeProperties": {
 			"format": {
-				"type": "JsonFormat",
-				"filePattern": "setOfObjects"
+				"type": "OrcFormat"
 			},
 			"fileName": {
-				"value": "@{concat(formatDateTime(utcnow(), 'HH'), '.json')}",
+				"value": "@{concat(formatDateTime(utcnow(), 'HH'), '.orc')}",
 				"type": "Expression"
 			},
 			"folderPath": {
