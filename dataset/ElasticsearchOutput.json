@@ -1,0 +1,16 @@
+{
+	"name": "ElasticsearchOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ElasticsearchLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		}
+	}
+}
