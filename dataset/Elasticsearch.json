@@ -1,5 +1,5 @@
 {
-	"name": "ElasticsearchOutput",
+	"name": "Elasticsearch",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ElasticsearchLinkedService",
