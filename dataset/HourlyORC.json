@@ -13,7 +13,7 @@
 				"filePattern": "setOfObjects"
 			},
 			"fileName": {
-				"value": "{@formatDateTime(utcnow(), 'HH')}.orc",
+				"value": "{@formatDateTime(utcnow(), 'HH')}.json",
 				"type": "Expression"
 			},
 			"folderPath": {
