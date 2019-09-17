@@ -9,14 +9,15 @@
 		"type": "AzureBlob",
 		"typeProperties": {
 			"format": {
-				"type": "OrcFormat"
+				"type": "JsonFormat",
+				"filePattern": "setOfObjects"
 			},
 			"fileName": {
-				"value": "@formatDateTime(utcnow(), 'HH')",
+				"value": "{@formatDateTime(utcnow(), 'HH')}.orc",
 				"type": "Expression"
 			},
 			"folderPath": {
-				"value": "@formatDateTime(utcnow(), 'yyyy/MM/dd')",
+				"value": "data-lake/{@formatDateTime(utcnow(), 'yyyy/MM/dd')}",
 				"type": "Expression"
 			}
 		}
